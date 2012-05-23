@@ -6,9 +6,7 @@
 
 // this check prevents access to debug front controllers that are deployed by accident to production servers.
 // feel free to remove this, extend it, or make something more sophisticated.
-if (isset($_SERVER['HTTP_CLIENT_IP'])
-    || isset($_SERVER['HTTP_X_FORWARDED_FOR'])
-    || !in_array(@$_SERVER['REMOTE_ADDR'], array(
+if (!in_array(@$_SERVER['REMOTE_ADDR'], array(
         '127.0.0.1',
         '::1',
         '94.45.65.48'
